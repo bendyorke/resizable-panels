@@ -1,6 +1,8 @@
 import React, {useState, FunctionComponent} from 'react'
 import './ResizablePanels.css'
 
+// PANEL ////////////////////////////////////////////////////////////////////
+
 type PanelDimensions = {
   height?: number
   width?: number
@@ -32,6 +34,16 @@ const Panel: FunctionComponent<PanelProps> = ({
     </div>
   )
 }
+
+// DRAGGER //////////////////////////////////////////////////////////////////
+
+type DraggerProps = {}
+
+const Dragger: FunctionComponent<DraggerProps> = () => {
+  return <div className="Dragger"></div>
+}
+
+// ROW //////////////////////////////////////////////////////////////////////
 
 interface IRowPanel {
   width: number
@@ -79,21 +91,25 @@ const Row: FunctionComponent<RowProps> = ({
 
   return (
     <div className="Row" style={{height: height + '%'}}>
-      {panels.map(({width, isCol}, index) =>
-        isCol ? (
-          <Col key={index} width={width} />
-        ) : (
-          <Panel
-            key={index}
-            width={width}
-            onVSplit={onVSplit(index)}
-            onHSplit={onHSplit(index)}
-          />
-        )
-      )}
+      {panels.map(({width, isCol}, index) => (
+        <React.Fragment key={index}>
+          {index > 0 && <Dragger />}
+          {isCol ? (
+            <Col width={width} />
+          ) : (
+            <Panel
+              width={width}
+              onVSplit={onVSplit(index)}
+              onHSplit={onHSplit(index)}
+            />
+          )}
+        </React.Fragment>
+      ))}
     </div>
   )
 }
+
+// COL //////////////////////////////////////////////////////////////////////
 
 interface IColPanel {
   height: number
@@ -141,22 +157,25 @@ const Col: FunctionComponent<ColProps> = ({
 
   return (
     <div className="Col" style={{width: width + '%'}}>
-      {panels.map(({height, isRow}, index) =>
-        isRow ? (
-          <Row key={index} height={height} />
-        ) : (
-          <Panel
-            key={index}
-            width={100}
-            height={height}
-            onVSplit={onVSplit(index)}
-            onHSplit={onHSplit(index)}
-          />
-        )
-      )}
+      {panels.map(({height, isRow}, index) => (
+        <React.Fragment key={index}>
+          {index > 0 && <Dragger />}
+          {isRow ? (
+            <Row height={height} />
+          ) : (
+            <Panel
+              height={height}
+              onVSplit={onVSplit(index)}
+              onHSplit={onHSplit(index)}
+            />
+          )}
+        </React.Fragment>
+      ))}
     </div>
   )
 }
+
+// RESIZABLE PANELS /////////////////////////////////////////////////////////
 
 type ResizablePanelsType = {
   Row: FunctionComponent<RowProps>

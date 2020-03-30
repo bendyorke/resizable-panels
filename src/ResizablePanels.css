@@ -4,17 +4,7 @@
   height: 100%;
   overflow: hidden;
   padding: 6px;
-}
-
-.Row {
-  height: 100%;
-  display: flex;
-}
-
-.Col {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .Panel {
@@ -56,3 +46,21 @@
   background: #434C5D;
   height: 24px;
 }
+
+.Dragger {
+  min-width: 6px;
+  min-height: 6px;
+  background: #2E3440;
+}
+
+.Row {
+  height: 100%;
+  display: flex;
+}
+
+.Col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
