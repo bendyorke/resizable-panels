@@ -53,6 +53,14 @@
   background: #2E3440;
 }
 
+.Dragger-horizontal:hover {
+  cursor: col-resize;
+}
+
+.Dragger-vertical:hover {
+  cursor: row-resize;
+}
+
 .Row {
   height: 100%;
   display: flex;
