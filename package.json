@@ -16,13 +16,21 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write .",
+    "prettier:watch": "npx onchange '**/*.js' -- npx prettier --write {{changed}}",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": false,
+    "semi": false,
+    "singleQuote": true
   },
   "browserslist": {
     "production": [
@@ -35,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "2.0.2"
   }
 }
