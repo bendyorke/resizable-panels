@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react'
-import './App'
+import './App.css'
 import ResizablePanels from './ResizablePanels'
 
 type AppProps = {}

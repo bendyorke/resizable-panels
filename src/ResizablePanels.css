@@ -1,5 +1,52 @@
 .ResizablePanels {
-  background: orange;
+  background: #2E3440;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+.Row {
+  height: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.Panel {
+  background: #3B4252;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Panel-controls {
+  background: #434C5D;
+  height: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Panel-control {
+  color: #8FBCBA;
+  font-weight: 900;
+  width: 24px;
+  text-algin: center;
+}
+
+.Panel-control:hover {
+  cursor: pointer;
+}
+
+.Panel-controlHSplit {
+  margin-top: -1px;
+}
+
+.Panel-main {
+  flex: 1;
+}
+
+.Panel-footer {
+  background: #434C5D;
+  height: 24px;
 }
