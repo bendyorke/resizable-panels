@@ -3,12 +3,18 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  padding: 6px;
 }
 
 .Row {
   height: 100%;
-  padding: 6px;
-  box-sizing: border-box;
+  display: flex;
+}
+
+.Col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .Panel {
