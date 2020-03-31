@@ -30,7 +30,7 @@ const Panel: FunctionComponent<PanelProps> = ({
           🁣
         </div>
       </header>
-      <main className="Panel-main" style={{minHeight: 36}}></main>
+      <main className="Panel-main"></main>
       <footer className="Panel-footer"></footer>
     </div>
   )

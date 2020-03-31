@@ -13,7 +13,7 @@ export const computeDistribution = ({
   spread, // Array of relative sizes representing the percent height/width
   targetIndex, // Index passed to the dragger component, representing subsiquent component
   dest, // Absolute value representing the cursors position
-  minSize = 36, // Minimum size of a component
+  minSize = 72, // Minimum size of a component
 }: ComputeDistribution): number[] => {
   // Find the end pixel value of the container
   const end = start + size
