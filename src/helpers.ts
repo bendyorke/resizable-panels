@@ -24,10 +24,13 @@ export const computeDistribution = ({
 
   // Calculate the min/max for absolute value of the drop location
   // These are the min/max pixel values acceptable for dest
-  // Limit the destination to these bounds
-  const min = size * prev + minSize
-  const max = size - (size * post + minSize)
-  const closestDest = Math.max(min, Math.min(max, dest))
+  const min = size * (prev / 100) + minSize + start
+  const max = end - (size * (post / 100) + minSize)
+
+  // Offset the absolute position of the cursor by the starting point of the panel
+  // Limit the destination within the min/max bounds
+  const destAdjusted = dest - start
+  const closestDest = Math.max(min, Math.min(max, destAdjusted))
 
   // Calculate the relative value for closestDest
   const closestDestRel = (closestDest / size) * 100
