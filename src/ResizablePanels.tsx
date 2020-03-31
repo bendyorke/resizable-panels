@@ -74,16 +74,16 @@ const Row: FunctionComponent<RowProps> = ({
 
   const onVSplit = (panelIndex: number) => (): void => {
     setPanels(
-      panels.reduce(
-        (memo: Array<RowPanel>, {width}: RowPanel, index: number) => {
-          if (panelIndex === index) {
-            return memo.concat([{width: width / 2}, {width: width / 2}])
-          } else {
-            return memo.concat([{width}])
-          }
-        },
-        []
-      )
+      panels.reduce((memo: Array<RowPanel>, panel: RowPanel, index: number) => {
+        if (panelIndex === index) {
+          return memo.concat([
+            {width: panel.width / 2},
+            {width: panel.width / 2},
+          ])
+        } else {
+          return memo.concat([panel])
+        }
+      }, [])
     )
   }
 
@@ -148,14 +148,14 @@ const Row: FunctionComponent<RowProps> = ({
 
 // COL //////////////////////////////////////////////////////////////////////
 
-interface IColPanel {
+interface ColPanel {
   height: number
   isRow?: boolean
 }
 
 type ColProps = {
   width: number
-  initialPanels?: IColPanel[]
+  initialPanels?: ColPanel[]
 }
 
 const Col: FunctionComponent<ColProps> = ({
@@ -163,40 +163,36 @@ const Col: FunctionComponent<ColProps> = ({
   width,
 }) => {
   const rowEl = useRef<HTMLDivElement>(null)
-  const [panels, setPanels] = useState<IColPanel[]>(initialPanels)
+  const [panels, setPanels] = useState<ColPanel[]>(initialPanels)
   const [draggingIndex, setDraggingIndex] = useState<number>(-1)
 
   const onHSplit = (panelIndex: number) => (): void => {
     setPanels(
-      panels.reduce(
-        (memo: Array<IColPanel>, {height}: IColPanel, index: number) => {
-          if (panelIndex === index) {
-            return memo.concat([{height: height / 2}, {height: height / 2}])
-          } else {
-            return memo.concat([{height}])
-          }
-        },
-        []
-      )
+      panels.reduce((memo: Array<ColPanel>, panel: ColPanel, index: number) => {
+        if (panelIndex === index) {
+          return memo.concat([
+            {height: panel.height / 2},
+            {height: panel.height / 2},
+          ])
+        } else {
+          return memo.concat([panel])
+        }
+      }, [])
     )
   }
 
   const onVSplit = (panelIndex: number) => (): void => {
     setPanels(
-      panels.reduce(
-        (memo: Array<IColPanel>, panel: IColPanel, index: number) => {
-          if (panelIndex === index) {
-            return memo.concat([{...panel, isRow: true}])
-          } else return memo.concat([panel])
-        },
-        []
-      )
+      panels.reduce((memo: Array<ColPanel>, panel: ColPanel, index: number) => {
+        if (panelIndex === index) {
+          return memo.concat([{...panel, isRow: true}])
+        } else return memo.concat([panel])
+      }, [])
     )
   }
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>): void => {
     if (rowEl.current) {
-      console.log(rowEl)
       const distribution = computeDistribution({
         start: rowEl.current.offsetTop,
         size: rowEl.current.clientHeight,
