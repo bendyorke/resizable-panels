@@ -100,8 +100,8 @@ const Row: FunctionComponent<RowProps> = ({
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>): void => {
     if (rowEl.current) {
       const distribution = computeDistribution({
-        start: rowEl.current.clientLeft,
-        end: rowEl.current.clientWidth,
+        start: rowEl.current.offsetLeft,
+        size: rowEl.current.clientWidth,
         spread: panels.map(x => x.width),
         targetIndex: draggingIndex,
         dest: event.clientX,
@@ -196,9 +196,10 @@ const Col: FunctionComponent<ColProps> = ({
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>): void => {
     if (rowEl.current) {
+      console.log(rowEl)
       const distribution = computeDistribution({
-        start: rowEl.current.clientTop,
-        end: rowEl.current.clientHeight,
+        start: rowEl.current.offsetTop,
+        size: rowEl.current.clientHeight,
         spread: panels.map(x => x.height),
         targetIndex: draggingIndex,
         dest: event.clientY,
