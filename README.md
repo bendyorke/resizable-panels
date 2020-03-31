@@ -2,6 +2,16 @@
 
 The goal of the assignment is to develop a React component that allows for the resizing of an arbitrary number of panels. The panels shall be able to be subdivided and resizable in both the horizontal and vertical direction. The initial panel layout shall be provided to the wrapping component. Minimum sizes shall be able to be provided to panels so that they are unable to shrink below the provided size. The sub-panels need to be resized in an acceptable way when the parent panel resizes. The code of the component is expected to be robust, readable and flexible
 
+## Examples
+
+Demo gif:
+
+![Demo](imgs/result.gif)
+
+Provided examples:
+
+![Examples](imgs/target.png)
+
 _This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)._
 
 ## Available Scripts
