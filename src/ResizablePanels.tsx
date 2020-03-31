@@ -259,8 +259,7 @@ const ResizablePanels: FunctionComponent<ResizablePanelsProps> &
   ResizablePanelsType = ({children}) => {
   return (
     <div className="ResizablePanels">
-      {/* <Row initialPanels={[{width: 100}]} height={100} /> */}
-      <Row height={100} />
+      <Row initialPanels={[{width: 100}]} height={100} />
     </div>
   )
 }
