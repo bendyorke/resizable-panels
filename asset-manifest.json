@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/resizable-panels/static/css/main.3cfe9bb5.chunk.css",
+    "main.js": "/resizable-panels/static/js/main.a247b790.chunk.js",
+    "main.js.map": "/resizable-panels/static/js/main.a247b790.chunk.js.map",
+    "runtime-main.js": "/resizable-panels/static/js/runtime-main.65ebb531.js",
+    "runtime-main.js.map": "/resizable-panels/static/js/runtime-main.65ebb531.js.map",
+    "static/js/2.ed9cac22.chunk.js": "/resizable-panels/static/js/2.ed9cac22.chunk.js",
+    "static/js/2.ed9cac22.chunk.js.map": "/resizable-panels/static/js/2.ed9cac22.chunk.js.map",
+    "index.html": "/resizable-panels/index.html",
+    "precache-manifest.76f3e9a1006d33e370586c9fa875ce94.js": "/resizable-panels/precache-manifest.76f3e9a1006d33e370586c9fa875ce94.js",
+    "service-worker.js": "/resizable-panels/service-worker.js",
+    "static/css/main.3cfe9bb5.chunk.css.map": "/resizable-panels/static/css/main.3cfe9bb5.chunk.css.map",
+    "static/js/2.ed9cac22.chunk.js.LICENSE.txt": "/resizable-panels/static/js/2.ed9cac22.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65ebb531.js",
+    "static/js/2.ed9cac22.chunk.js",
+    "static/css/main.3cfe9bb5.chunk.css",
+    "static/js/main.a247b790.chunk.js"
+  ]
+}
