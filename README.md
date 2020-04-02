@@ -6,7 +6,7 @@ This project should take no longer than 120 minutes to complete.
 
 ## Examples
 
-[Live Example!](http://bendyorke.github.io/resizable-panels)
+[Live Example](http://bendyorke.github.io/resizable-panels) Click either of the green icons in the top right of the screen to start splitting!
 
 Demo gif:
 
